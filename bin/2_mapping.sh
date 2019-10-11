@@ -65,7 +65,7 @@ then
 	${samtools} index ${outdir}/${sample_name}.final.sort.bam
 else
 	echo "BS/RRBS mode only for PE data"
-	${bismark} --fastq --non_directional --unmapped --gzip --samtools_path ${samtools} \
+	${bismark} --fastq --unmapped --gzip --samtools_path ${samtools} \
     --phred33-quals --path_to_bowtie2 ${bowtie2_dir} \
     --output_dir ${outdir} --temp_dir ${outdir} ${fa_dir}  \
     -1 ${fastq1} -2 ${fastq2}
@@ -77,4 +77,3 @@ else
 fi
 
 echo "mapping finished at `date`"
-
